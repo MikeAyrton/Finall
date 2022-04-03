@@ -13,7 +13,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .decorations import *
-from django.urls import reverse
+# from django.urls import reverse
 
 class HomeView(LoginRequiredMixin, TemplateView):
     template_name = "index.html"
@@ -41,7 +41,7 @@ def favorite_list(request):
     new = Product.objects.filter(favorites=request.user)
     return render(request, 'finallproject/favorites.html', {'new': new})
 
-@login_required(login_url="login")
+# @login_required(login_url="login")
 def main_page(request):
     products = Product.objects.all()
     context = {
