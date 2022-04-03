@@ -41,7 +41,7 @@ def favorite_list(request):
     new = Product.objects.filter(favorites=request.user)
     return render(request, 'finallproject/favorites.html', {'new': new})
 
-# @login_required(login_url="login")
+@login_required(login_url="login")
 def main_page(request):
     products = Product.objects.all()
     context = {
