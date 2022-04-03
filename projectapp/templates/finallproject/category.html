@@ -25,11 +25,7 @@
   .card-product__title:hover{
     color: #007bff;
   }
-  .logout:hover{
-    color: red !important;
-  }
-  </style>
-
+</style>
 <body>
   <!--================ Start Header Menu Area =================-->
 	<header class="header_area">
@@ -67,7 +63,7 @@
               <li class="nav-item"><a class="button button-header" href="{% url 'create_product' %}">Add Product</a></li>
             </ul>
           
- <a href="{% url 'logout' %}" class='logout'>Log out</a>
+ <a href="{% url 'logout' %}">Log out</a>
           </div>
         </div>
 

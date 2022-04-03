@@ -36,11 +36,9 @@
       width: 150px;
       
     }
-
   </style>
 </head>
 <body>
-  
 <h1>Are you sure to delete "{{item}}"?</h1>
 
 <form method="POST" action="{% url 'delete_product' item.id %}">
@@ -49,7 +47,7 @@
   <div class="text-center">
   <button class="btn btn-danger"><a href="{% url 'category' %}">Cancel</a></button>
 
-  <button class="btn btn-primary" type="submit">Confirm</button>
+  <button class="btn btn-primary type="submit">Confirm</button>
 
 </div>
   
