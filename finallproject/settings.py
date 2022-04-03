@@ -22,7 +22,7 @@ SECRET_KEY = 'django-insecure-)cyrzksme5p!)(gn8m(6u7gtnf=m^)_(eoz)yzc_&lo6y@ys(5
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'finallpro.herokuapp.com', 'localhost:8000']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
