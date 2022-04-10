@@ -1,4 +1,6 @@
 {% load static %}
+{% load cart_tag %}
+{% for key,product in request.session.cart.items %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,62 +71,60 @@
 
   <!--================Cart Area =================-->
   <section class="cart_area">
-      <div class="container">
-          <div class="cart_inner">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th scope="col">Product</th>
-                              <th scope="col">Price</th>
-                              <th scope="col">Quantity</th>
-                              <th scope="col">Total</th>
-                          </tr>
-                      </thead>
-                      {% load cart_tag %}
-                      {% for key,product in request.session.cart.items %}
-                      <tbody>
-                          <tr>
+    <div class="container">
+        <div class="cart_inner">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                              <td>
-                                  <div class="media">
-                                      <div class="d-flex">
-                                          <img style="width:35%;" src="{{product.image}}" alt="">
-                                      </div>
-                                      <div class="">
-                                          <p style="font-size: 25px; width: 100%;margin: 50% 50% 0 0 ;">{{product.name}}</p>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5 style="width:50px"> {{product.price}} $</h5>
-                              </td>
-                              <td style='display:flex;'>
-                                <div class="ddd" style="margin-top: 115%;display: flex">
-                                <a href="{% url 'item_decrement' product.product_id %}">➖</a>
-                                <h5 style="margin-left: 5px; font-size: 20px;">{{product.quantity}}</h5>
-                                <a href="{% url 'item_increment' product.product_id %}" style="margin-left: 5px;">➕</a> 
-                              </div>                       
-                              </td>
-                              <td>
-                                  <h5>{{ product.price|multiply:product.quantity }} $</h5>
-                              </td>
-                            {% endfor %}
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="{{product.image}}" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>{{product.name}}</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <h5>{{product.price}}$</h5>
+                            </td>
+                            <td>
+                                <div class="product_count">
+                                  {{product.quantity}}
+                                </div>
+                            </td>
+                            <td>
+                                <h5>$720.00</h5>
+                            </td>
+                        </tr>
+                        {% endfor %}
 
-                            <tr class="bottom_button">
-                              <td>
-                                <a class='button' href="{% url 'cart_clear' %}">Clear Cart</a>
-                              </td>
-                              <td>
 
-                              </td>
-                              <td>
+                        <tr class="bottom_button">
+                            <td>
+                                <a class="button" href="{'cart_clear'}">Cart Clear</a>
+                            </td>
+                        </tr>
 
-                              </td>
-                              <td>
-                                  
-                              </td>
-                          </tr>
+
+                  
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
   <!--================End Cart Area =================-->
 
 
