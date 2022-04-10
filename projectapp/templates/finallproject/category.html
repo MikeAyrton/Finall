@@ -34,6 +34,9 @@
     padding-top: 2% !important;
   }
 }
+.nav1:hover{
+  border: 1px solid red !important;
+}
 
 </style>
 <body>
@@ -71,7 +74,7 @@
                 <li class="nav-item"><button><i class="far fa-user" style="margin-right:8px;"></i>{{ user.username }}</li></i></button></li>
 
               <li class="nav-item"><a class="button button-header" href="{% url 'create_product' %}">Add Product</a></li>
-              <li style="margin-left: -2%; margin-top: 1%;" class="nav-item"><a class="button button-header" href="{% url 'logout' %}">Log out</a></li>
+              <li style="margin-left: -2%; margin-top: 1%;" class="nav-item"><a class="button button-header nav1" href="{% url 'logout' %}">Log out</a></li>
 
             </ul>
           
