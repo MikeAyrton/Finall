@@ -170,7 +170,7 @@ def create_category(request):
         form = CreateProductCategory(request.POST)
         if form.is_valid():
             form.save()
-            return('category')
+            return redirect('category')
         else:
             form = CreateProductCategory()
         return render(request, 'finallproject/create_category.html',  {'form': form})
