@@ -101,14 +101,14 @@
                             </td>
                             <td>
                                 <div class="product_count">
-                                  <a href="{% url 'item_increment' value.product_id %}">➖ </a>
+                                  <a href="{% url 'item_increment' product.product_id %}">➖ </a>
                                   {{product.quantity}}
-                                  <a href="{% url 'item_decrement' value.product_id %}">➕</a>
+                                  <a href="{% url 'item_decrement' product.product_id %}">➕</a>
                                   {{product.quantity}}
                                 </div>
                             </td>
                             <td>
-                                <h5>{{ value.price|multiply:value.quantity}}$</h5>
+                                <h5>{{ product.price|multiply:product.quantity}}$</h5>
                             </td>
                         </tr>
                         {% endfor %}
