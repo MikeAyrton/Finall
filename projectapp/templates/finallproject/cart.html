@@ -89,7 +89,7 @@
                             <td>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <img src="{{product.image}}" alt="" style='width=50%'>
+                                        <img src="{{product.image}}" alt="" style='width=30%'>
                                     </div>
                                     <div class="media-body">
                                         <p>{{product.name}}</p>
@@ -101,10 +101,9 @@
                             </td>
                             <td>
                                 <div class="product_count">
-                                  <a href="{% url 'item_increment' product.product_id %}">➖ </a>
-                                  {{product.quantity}}
-                                  <a href="{% url 'item_decrement' product.product_id %}">➕</a>
-                                  {{product.quantity}}
+                                  <a href="{% url 'item_decrement' product.product_id %}">➖</a>
+                                  <h5 style="margin-left: 5px; font-size: 20px;">{{product.quantity}}</h5>
+                                  <a href="{% url 'item_increment' product.product_id %}" style="margin-left: 5px;">➕</a> 
                                 </div>
                             </td>
                             <td>
