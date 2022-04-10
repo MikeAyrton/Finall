@@ -89,7 +89,7 @@
                             <td>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <img src="{{product.image}}" alt="">
+                                        <img src="{{product.image}}" alt="" style='width=50%'>
                                     </div>
                                     <div class="media-body">
                                         <p>{{product.name}}</p>
@@ -101,11 +101,14 @@
                             </td>
                             <td>
                                 <div class="product_count">
+                                  <a href="{% url 'item_increment' value.product_id %}">➖ </a>
+                                  {{product.quantity}}
+                                  <a href="{% url 'item_decrement' value.product_id %}">➕</a>
                                   {{product.quantity}}
                                 </div>
                             </td>
                             <td>
-                                <h5>$720.00</h5>
+                                <h5>{{ value.price|multiply:value.quantity}}$</h5>
                             </td>
                         </tr>
                         {% endfor %}
