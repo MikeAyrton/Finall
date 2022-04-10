@@ -1,6 +1,5 @@
 {% load static %}
-{% load cart_tag %}
-{% for key,product in request.session.cart.items %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +83,8 @@
                         </tr>
                     </thead>
                     <tbody>
-
+                      {% load cart_tag %}
+                      {% for key,product in request.session.cart.items %}
                         <tr>
                             <td>
                                 <div class="media">
