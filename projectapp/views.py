@@ -172,7 +172,7 @@ def create_category(request):
             form.save()
             return('category')
         else:
-            form = CreateProductCategory
+            form = CreateProductCategory()
         return render(request, 'finallproject/create_category.html',  {'form': form})
 
     context = {
