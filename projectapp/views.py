@@ -163,6 +163,18 @@ def cart_clear(request):
 def cart_detail(request):
     return render(request, 'finallproject/cart.html')
 
+@login_required(login_url='/users/login')
+def create_category(request):
+    form = CreateProductCategory()
+    if request.method == 'POST':
+        form = CreateProductCategory(request.POST)
+        if form.is_valid():
+            form.save()
+            return('category')
+        else:
+            form = CreateProductCategory
+        return render(request, 'finallproject/create_product.html',  {'form': form})
+
 @login_required(login_url="/users/login")
 def create_product(request):
     form = ProductForm()

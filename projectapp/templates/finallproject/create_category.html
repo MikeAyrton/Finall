@@ -21,8 +21,8 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <style>
     .header_area .navbar .nav .nav-item:hover .nav-link, .header_area .navbar .nav .nav-item.active .nav-link {
-  color: #000 !important;}
-
+      color: #000 !important;}
+    
     @media (max-width: 991px){
     .header_area .navbar .nav-shop {
     padding-bottom: 40px !important;
@@ -30,8 +30,8 @@
   }
 }
 .nav1:hover{
-    border: 1px solid red !important;
-  }
+  border: 1px solid red !important;
+}
   </style>
 </head>
 <body>
@@ -66,7 +66,6 @@
                   class="nav-shop__circle"></span></a></button>
                   <li class="nav-item"><button><i class="far fa-user" style="margin-right:8px;"></i>{{ request.user }}</li></i></button></li>
                   <li class="nav-item"><a class="button button-header" href="{% url 'category' %}">Buy now</a></li>
-                  <li style="margin-left: -2%; margin-top: 1%;" class="nav-item"><a class="button button-header" href="{% url 'logout' %}">Log out</a></li>
                   <li style="margin-left: -2%; margin-top: 1%;" class="nav-item"><a class="button button-header nav1" href="{% url 'logout' %}">Log out</a></li>
 
                 </ul>
@@ -86,37 +85,16 @@
                   <!-- {{ form.as_p }} -->
                   <div class="mt-1" style="padding-right: 18px; justify-content: center; text-align: center; margin: 0 auto;">
                     <div class="mb-3" style="margin-right: 18px; width: 50%; margin: 0 auto;">
-                      {% render_field form.name type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="email-addon" %}
-                  </div>
-    
-                 <div class="mb-3" style="margin-right: 18px;  width: 50%; margin: 0 auto;">
-                      {% render_field form.category type="dropdown" class="form-control" placeholder="Category" aria-label="Name" aria-describedby="email-addon" %}
-                  </div>
-             
-                <div class="mb-3" style="margin-right: 18px;  width: 50%; margin: 0 auto;">
-                      {% render_field form.price type="text" class="form-control" placeholder="Price" aria-label="Name" aria-describedby="email-addon" %}
-                  </div>
-    
-                  <div class="mb-3" style="margin-right: 18px;  width: 50%; margin: 0 auto;">
-                    {% render_field form.color type="text" class="form-control" placeholder="Color" aria-label="Name" aria-describedby="email-addon" %}
-                </div>  
-    
-                <div class="mb-3" style="margin-right: 18px;  width: 50%; margin: 0 auto;">
-                   {% render_field form.memory type="dropdown" class="form-control" placeholder="Memory" aria-label="Name" aria-describedby="email-addon" %}
-              </div>
-              <div class="mb-3" style="margin-right: 18px;  width: 50%; margin: 0 auto;">
-                {% render_field form.description type="text" class="form-control" placeholder="Description" aria-label="Name" aria-describedby="email-addon" %}
-           </div>
-           <div class="mb-3" style="margin-right: 18px;  width: 50%; margin: 0 auto;">
-                {% render_field form.image type="file" class="form-control-file" %}
-        </div>
-           <button  style='margin:1% 0 8%;' type="submit" class="btn btn-primary">Edit</button>
+                      {% render_field form.category_name type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="email-addon" %}
+                  </div>             
+           
+           <button  style='margin:1% 0 8%;' type="submit" class="btn btn-primary">Add</button>
               </form>
           </div>
       </div>
 
 
-      <script src="{% static 'vendors/jquery/jquery-3.2.1.min.js' %}"></script>
+  <script src="{% static 'vendors/jquery/jquery-3.2.1.min.js' %}"></script>
   <script src="{% static 'vendors/bootstrap/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
   <script src="{% static 'vendors/nice-select/jquery.nice-select.min.js' %}"></script>

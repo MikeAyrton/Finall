@@ -26,5 +26,10 @@ class ProductForm(ModelForm):
 
 class SentMessageForm(forms.ModelForm):
     class Meta:
-        model=SendMessage
-        fields='__all__'
+        model = SendMessage
+        fields = '__all__'
+
+class CreateProductCategory(forms.ModelForm):
+    class Meta:
+        model = Category
+        fields = '__all__'

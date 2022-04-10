@@ -22,6 +22,9 @@
 </head>
 
 <style>
+  .header_area .navbar .nav .nav-item:hover .nav-link, .header_area .navbar .nav .nav-item.active .nav-link {
+    color: #000 !important;}
+  }
   .card-product__title:hover{
     color: #007bff;
   }
@@ -74,7 +77,7 @@
                 <li class="nav-item"><button><i class="far fa-user" style="margin-right:8px;"></i>{{ user.username }}</li></i></button></li>
 
               <li class="nav-item"><a class="button button-header" href="{% url 'create_product' %}">Add Product</a></li>
-              <li style="margin-left: -2%; margin-top: 1%;" class="nav-item"><a class="button button-header nav1" href="{% url 'logout' %}">Log out</a></li>
+              <li style="margin-left: -2%; margin-top: 1%;" class="nav-item"><a class="button button-header " href="{% url 'create_category' %}">Add Category</a></li>
 
             </ul>
           
