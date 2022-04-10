@@ -29,7 +29,7 @@ class SentMessageForm(forms.ModelForm):
         model = SendMessage
         fields = '__all__'
 
-class CreateProductCategory(forms.ModelForm):
+class CreateProductCategory(ModelForm):
     class Meta:
         model = Category
         fields = '__all__'
