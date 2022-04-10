@@ -100,7 +100,7 @@
                                 <h5>{{product.price}}$</h5>
                             </td>
                             <td>
-                                <div class="product_count">
+                                <div class="product_count" style="margin-top: 115%;display: flex">>
                                   <a href="{% url 'item_decrement' product.product_id %}">➖</a>
                                   <h5 style="margin-left: 5px; font-size: 20px;">{{product.quantity}}</h5>
                                   <a href="{% url 'item_increment' product.product_id %}" style="margin-left: 5px;">➕</a> 
@@ -115,7 +115,7 @@
 
                         <tr class="bottom_button">
                             <td>
-                                <a class="button" href="{'cart_clear'}">Cart Clear</a>
+                                <a class="button" href="{% url 'cart_clear' %}">Cart Clear</a>
                             </td>
                         </tr>
 
