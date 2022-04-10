@@ -175,6 +175,12 @@ def create_category(request):
             form = CreateProductCategory
         return render(request, 'finallproject/create_product.html',  {'form': form})
 
+    context = {
+    'form': form    
+    }
+
+    return render(request, 'finallproject/create_category.html', context)
+
 @login_required(login_url="/users/login")
 def create_product(request):
     form = ProductForm()
