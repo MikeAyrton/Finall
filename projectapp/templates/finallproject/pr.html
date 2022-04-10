@@ -93,7 +93,7 @@
               <li class="nav-item"><button><i class="far fa-user" style="margin-right:8px;"></i>{{ request.user }}</li></i></button></li>
 
               <li class="nav-item"><a class="button button-header" href="{% url 'update_product' products.id %}">Edit</a></li>
-              <li class="nav-item"><a class="button button-header btn-1" href="{% url 'delete_product' products.id %}">Delete</a></li>
+              <li style='margin-left: -3%;' class="nav-item"><a class="button button-header btn-1" href="{% url 'delete_product' products.id %}">Delete</a></li>
 
             </ul>
        
@@ -107,44 +107,60 @@
 
   </header>
 
+
+
+  <div class="container">
+
+
+    <div class="row">
+
+      <div class="col">
+        <div class="div_1">
+          <img class="img" src="{{ products.image.url }}" alt="">
+       </div>
+      </div>
+
+      <div class="col">
+        <div class="div_2" style='margin-top:25%'>
+          <h2>{{products.name}}  {{products.color}} {{products.memory}}</h2>
+          <p>{{products.category}}</p>
+          
+          <h3>${{products.price}}</h3>
+          <div class="btns">
+            <table>
+              <tr>
+                <th>
+                  <a href="{% url 'cart_add' products.id %}" class="btn btn-primary"><i class="ti-shopping-cart"> </i>Add to cart</a>
+                </th>
+                <th>
+                  <a href="{% url 'favorite_add' products.id %}" class="btn btn-primary"><i class="far fa-star"> </i> Add fo favorites</a>
+
+                </th>
+              </tr>
+            </table>
+            <p class="w">{{products.description}}</p>
+          </div>
+        </div>
+      </div>
+      </div>
+   
+    </div>
+
+  </div>
+
+
   <section>
     <div class="container">
         <div class="section">
 
         <div class="div">
-          <div class="div_1">
-             <img class="img" src="{{ products.image.url }}" alt="">
-          </div>
-          <div class="div_2">
-            <h2>{{products.name}}  {{products.color}} {{products.memory}}</h2>
-            <p>{{products.category}}</p>
-            
-            <h3>${{products.price}}</h3>
-            <div class="btns">
-              <table>
-                <tr>
-                  <th>
-                    <a href="{% url 'cart_add' products.id %}" class="btn btn-primary"><i class="ti-shopping-cart"> </i>Add to cart</a>
-                  </th>
-                  <th>
-                    <a href="{% url 'favorite_add' products.id %}" class="btn btn-primary"><i class="far fa-star"> </i> Add fo favorites</a>
- 
-                  </th>
-                </tr>
-              </table>
-             
-
-              
-              <p class="w">{{products.description}}</p>
-            </div>
-          </div>
-        </div>
+         
+        
   </div>
         </section>
 
-<div class="container">
-  
-      </div>
+
+
 
       <script src="{% static 'vendors/jquery/jquery-3.2.1.min.js' %}"></script>
       <script src="{% static 'vendors/bootstrap/bootstrap.bundle.min.js' %}"></script>
