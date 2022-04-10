@@ -24,6 +24,12 @@
   .button:hover{
     border: 1px solid red !important;
   }
+  @media (max-width: 991px){
+    .header_area .navbar .nav-shop {
+    padding-bottom: 40px !important;
+    padding-top: 2% !important;
+  }
+}
 </style>
 <body>
   <!--================ Start Header Menu Area =================-->
@@ -58,8 +64,9 @@
               class="nav-shop__circle"></span></button>
               <li class="nav-item"><button><i class="far fa-user" style="margin-right:8px;"></i>{{ request.user }}</li></i></button></li>
               <li class="nav-item"><a class="button button-header" href="{% url 'category' %}">Buy Now</a></li>
+              <li style="margin-left: -2%; margin-top: 1%;" class="nav-item"><a class="button button-header" href="{% url 'logout' %}">Log out</a></li>
+
             </ul>
- <a href="{% url 'logout' %}">Log out</a>
           </div>
         </div>
 

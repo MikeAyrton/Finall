@@ -19,6 +19,14 @@
   <link rel="stylesheet" href="{% static 'vendors/nouislider/nouislider.min.css' %}">
 
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    @media (max-width: 991px){
+    .header_area .navbar .nav-shop {
+    padding-bottom: 40px !important;
+    padding-top: 2% !important;
+  }
+}
+  </style>
 </head>
 <body>
 	<header class="header_area">
@@ -52,8 +60,10 @@
                   class="nav-shop__circle"></span></a></button>
                   <li class="nav-item"><button><i class="far fa-user" style="margin-right:8px;"></i>{{ request.user }}</li></i></button></li>
                   <li class="nav-item"><a class="button button-header" href="{% url 'category' %}">Buy now</a></li>
+                  <li style="margin-left: -2%; margin-top: 1%;" class="nav-item"><a class="button button-header" href="{% url 'logout' %}">Log out</a></li>
+                  <li style="margin-left: -2%; margin-top: 1%;" class="nav-item"><a class="button button-header" href="{% url 'logout' %}">Log out</a></li>
+
                 </ul>
-     <a href="{% url 'logout' %}">Log out</a>
               </div>
             </div>
     
