@@ -91,9 +91,9 @@
               <li class="nav-item"><a href="{% url 'favorite_list' %}"><i class="far fa-star"></i></a></li>              <li class="nav-item"><button><a href="{% url 'cart' %}"><i class="ti-shopping-cart"></i><span
               class="nav-shop__circle"></span></a></button>
               <li class="nav-item"><button><i class="far fa-user" style="margin-right:8px;"></i>{{ request.user }}</li></i></button></li>
-              
-              <li  class="nav-item"><a class="button button-header" href="{% url 'update_product' products.id %}">Edit</a></li>
-              <li style="list-style-type: none;" class="nav-item"><a class="button button-header btn-1" href="{% url 'delete_product' products.id %}">Delete</a></li>
+
+              <li class="nav-item"><a class="button button-header" href="{% url 'update_product' products.id %}">Edit</a></li>
+              <li class="nav-item"><a class="button button-header btn-1" href="{% url 'delete_product' products.id %}">Delete</a></li>
 
             </ul>
        
